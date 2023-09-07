@@ -27,7 +27,7 @@ public class Transaction {
     private Integer id;
 
     @CreationTimestamp
-    private Date creattimeat;
+    private Date creattimeat; //  it will create the current time timestamp
 
     @UpdateTimestamp
     private Date updateAt;

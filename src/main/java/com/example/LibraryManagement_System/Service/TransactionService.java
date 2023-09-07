@@ -12,11 +12,9 @@ import com.example.LibraryManagement_System.Repositary.TransactionRepositary;
 import com.example.LibraryManagement_System.RequestDto.ReturnBookDto;
 import com.example.LibraryManagement_System.RequestDto.issueBookReqDTO;
 import com.example.LibraryManagement_System.Transaction;
-import com.sun.net.httpserver.Authenticator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.TransactionStatus;
 
 import java.util.Date;
 import java.util.List;
@@ -37,7 +35,7 @@ public class TransactionService {
     @Autowired
     private LibraryCardRepo libraryCardRepo;
 
-    public void issuebooktostudent(issueBookReqDTO issueBookReqDTO) throws Exception
+    public String issuebooktostudent(issueBookReqDTO issueBookReqDTO) throws Exception
     {
         Integer bookId= issueBookReqDTO.getBookId();
         Integer cardId= issueBookReqDTO.getCardId();
@@ -85,6 +83,7 @@ public class TransactionService {
 
          bookRepositary.save(book);
          libraryCardRepo.save(libraryCard);
+        return "book issued successfully7";
     }
 
     public String returnBook(ReturnBookDto returnBookDto)

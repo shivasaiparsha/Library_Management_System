@@ -1,6 +1,7 @@
 package com.example.LibraryManagement_System.Controller;
 
 import com.example.LibraryManagement_System.RequestDto.issueBookReqDTO;
+import com.example.LibraryManagement_System.Service.TransactionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
